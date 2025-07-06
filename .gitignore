@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+
+.idea/
+*.iml
+*.iws
+*.ipr
+Scratches and Consoles/
+
+vendor/
+.env
+.env.*
+*.bak
+*.swp
