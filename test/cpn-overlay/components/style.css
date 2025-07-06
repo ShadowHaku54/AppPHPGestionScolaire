@@ -1,0 +1,294 @@
+:root {
+    --brown: #4a2e16;
+    --orange: #ff9d33;
+    --blue: #2d73d2;
+    --glass: rgba(255, 255, 255, .96);
+    --shadow: 0 12px 28px rgba(0, 0, 0, .15);
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-xl: 30px;
+}
+
+/* toile + modale */
+.ov {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999
+}
+
+.ov-modal {
+    width: 92%;
+    max-width: 1150px;
+    background: var(--glass);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    max-height: 94vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden
+}
+
+/* en-tête */
+.ov-header {
+    padding: 22px 46px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.ov-header h2 {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--brown);
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.ov-header i {
+    font-size: 1.5rem;
+    color: var(--orange);
+    animation: float 4s ease-in-out infinite
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(-6px)
+    }
+}
+
+/* zone défilable */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden
+}
+
+/* barre filtre collée au tableau */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--glass);
+    backdrop-filter: blur(6px);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    box-shadow: var(--shadow);
+    padding: 12px 22px 12px 22px;
+    font-size: .92rem;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.search {
+    position: relative;
+    flex: 1 1 270px;
+    max-width: 375px
+}
+
+.search input {
+    width: 100%;
+    padding: 11px 44px 11px 40px;
+    border: 2px solid #dcdcdc;
+    border-radius: var(--radius-xl);
+    background: #fafafa;
+    transition: .25s
+}
+
+.search input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 157, 51, .25);
+    background: #fff
+}
+
+.search i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--brown)
+}
+
+.sel {
+    position: relative
+}
+
+.sel select {
+    appearance: none;
+    padding: 10px 48px 10px 16px;
+    border: 2px solid #dcdcdc;
+    border-radius: var(--radius-sm);
+    background: #fff;
+    font-size: .9rem;
+    cursor: pointer
+}
+
+.sel select:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 157, 51, .25)
+}
+
+.sel::after {
+    content: "\f107";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--brown);
+    pointer-events: none;
+    transition: .25s
+}
+
+.sel:hover::after {
+    transform: translateY(-50%) rotate(180deg)
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--brown), var(--orange));
+    color: #fff;
+    border: none;
+    padding: 11px 22px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12)
+}
+
+/* tableau défilable */
+.table-card {
+    flex: 1;
+    overflow: auto
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    counter-reset: row;
+    font-size: .94rem
+}
+
+thead {
+    background: rgba(255, 255, 255, .55);
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    font-size: .9rem
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left
+}
+
+th {
+    color: var(--brown);
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+tbody tr.loaded {
+    animation: slideFade .5s ease-out forwards
+}
+
+tbody tr:hover:not(.ov-sel-row) {
+    background: rgba(255, 157, 51, .08);
+    transform: translateY(-2px)
+}
+
+td.ov-num {
+    width: 48px;
+    text-align: right;
+    font-weight: 700;
+    color: var(--brown)
+}
+
+td.ov-num::before {
+    counter-increment: row;
+    content: counter(row)
+}
+
+.ov-badge {
+    padding: 5px 12px;
+    border-radius: 14px;
+    font-size: .78rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #eef4ff;
+    color: var(--brown)
+}
+
+.ov-pick {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 8px 16px;
+    background: linear-gradient(135deg, var(--blue), #6ea6ff);
+    color: #fff;
+    font-size: .82rem;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.ov-pick i {
+    font-size: .85rem
+}
+
+.ov-pick:hover {
+    transform: translateY(-2px)
+}
+
+.ov-sel-row {
+    background: rgba(45, 115, 210, .15)
+}
+
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+/* fermeture */
+.ov-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #f0f0f0;
+    color: var(--brown);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer
+}

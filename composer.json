@@ -1,0 +1,15 @@
+{
+  "autoload": {
+    "psr-4": {
+      "App\\":        "src/",
+      "App\\Config\\": "Config/"
+    },
+    "files": [
+      "Config/constants.php",
+      "Config/utils.php"
+    ]
+  },
+  "require": {
+    "ext-pdo": "*"
+  }
+}

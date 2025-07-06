@@ -1,0 +1,27 @@
+.form-group.success input,
+.form-group.success select {
+    border-color: #2ecc71;
+}
+
+.error input,
+.error select {
+    border-color: #e74c3c !important;
+}
+
+.message-erreur {
+    background: #fdecea;
+    border-left: 4px solid #e74c3c;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-top: 4px;
+    margin-bottom: 1px;
+    font-size: 0.9em;
+    color: #c0392b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.message-erreur i {
+    font-size: 1em;
+}

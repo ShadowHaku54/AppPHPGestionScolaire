@@ -1,0 +1,184 @@
+:root {
+    --brown: #4a2e16;
+    --orange: #ff9d33;
+    --blue: #2d73d2;
+    --pink: #d54d8d;
+    --red: #c03c30;
+    --gray: #666;
+    --radius: 22px;
+    --shadow: 0 8px 22px rgba(0, 0, 0, .12)
+}
+
+form {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 36px 42px;
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 38px auto;
+}
+
+.btn {
+    padding: 14px 26px;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    transition: transform .25s;
+    position: relative;
+    overflow: hidden
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 100%;
+    background: rgba(255, 255, 255, .23);
+    transform: skewX(-20deg)
+}
+
+.btn:hover {
+    transform: translateY(-3px)
+}
+
+.btn:hover:before {
+    animation: shine .6s forwards
+}
+
+@keyframes shine {
+    to {
+        left: 120%
+    }
+}
+
+.grad-orange {
+    background: linear-gradient(135deg, var(--brown), var(--orange))
+}
+
+/* --- toggle radio INSCRIPTION / REINSCRIPTION --- */
+.mode-toggle {
+    display: flex;
+    gap: 12px
+}
+
+.mode-toggle input {
+    display: none
+}
+
+.mode-toggle label {
+    flex: 1;
+    padding: 14px 0;
+    border: 2px solid #ddd;
+    border-radius: var(--radius);
+    background: #ececec;
+    color: var(--brown);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: .25s
+}
+
+.mode-toggle input:checked + label {
+    background: linear-gradient(135deg, var(--brown), var(--orange));
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15)
+}
+
+.section {
+    display: none;
+    flex-direction: column;
+    gap: 24px
+}
+
+.section.active {
+    display: flex
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.field label {
+    font-size: .85rem;
+    color: var(--gray);
+    font-weight: 600
+}
+
+.field input {
+    padding: 14px 18px;
+    border: 2px solid #ddd;
+    border-radius: var(--radius);
+    font-size: .95rem;
+    background: #fafafa;
+    transition: .25s
+}
+
+.field input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 157, 51, .25);
+    background: #fff;
+    outline: none
+}
+
+.sex-toggle {
+    display: flex;
+    gap: 12px
+}
+
+.sex-toggle input {
+    display: none
+}
+
+.sex-toggle label {
+    flex: 1;
+    padding: 14px 0;
+    border: 2px solid #ddd;
+    border-radius: var(--radius);
+    background: #fafafa;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--brown);
+    transition: .25s
+}
+
+.sex-toggle label:hover {
+    border-color: var(--orange)
+}
+
+#sexM:checked + label {
+    background: linear-gradient(135deg, var(--blue), #5aa3ff);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .15)
+}
+
+#sexF:checked + label {
+    background: linear-gradient(135deg, var(--pink), #ffabd5);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .15)
+}
+
+

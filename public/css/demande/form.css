@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    -webkit-tap-highlight-color: transparent
+}
+
+:root {
+    --brown: #4a2e16;
+    --orange: #ff9d33;
+    --blue: #2d73d2;
+    --violet: #6f58d7;
+    --red: #d7392e;
+    --glass: #ffffffee;
+    --radius: 24px;
+    --shadow: 0 6px 24px rgba(0, 0, 0, .08)
+}
+
+
+.container {
+    width: 100%;
+    max-width: 560px;
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 38px 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 38px auto;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--brown)
+}
+
+.context {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--glass);
+    backdrop-filter: blur(6px);
+    padding: 18px 28px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .06)
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--brown);
+    font-size: .95rem
+}
+
+.tag i {
+    color: var(--orange);
+    font-size: .9rem
+}
+
+.toggle {
+    display: flex;
+    gap: 14px
+}
+
+.toggle input {
+    display: none
+}
+
+.opt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: .95rem;
+    cursor: pointer;
+    background: #fafafa;
+    color: var(--brown);
+    transition: .25s
+}
+
+.opt i {
+    font-size: .9rem
+}
+
+#SUSPENSION:checked+label {
+    background: var(--orange);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12)
+}
+
+#ANNULATION:checked+label {
+    background: var(--red);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12)
+}
+
+.opt:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .08)
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: .9rem;
+    color: var(--brown)
+}
+
+textarea {
+    resize: none;
+    min-height: 90px;
+    padding: 16px 18px;
+    border: 2px solid #dcdcdc;
+    border-radius: var(--radius);
+    background: #fafafa;
+    font-size: .95rem;
+    transition: .25s
+}
+
+textarea:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 157, 51, .25);
+    outline: none;
+    background: #fff
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px
+}
+
+.btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: var(--radius);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--brown), var(--orange))
+}
+
+.btn-cancel {
+    background: linear-gradient(135deg, #999, #666)
+}
+
+.btn:hover {
+    transform: translateY(-3px)
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 130%;
+    height: 100%;
+    background: rgba(255, 255, 255, .25);
+    transform: skewX(-20deg)
+}
+
+.btn:hover:before {
+    animation: shine .65s forwards
+}
+
+@keyframes shine {
+    to {
+        left: 130%
+    }
+}

@@ -1,0 +1,356 @@
+body {
+    background: #f0f0f3;
+    color: #222;
+    font-size: 16px
+}
+
+.container {
+    max-width: 1250px;
+    width: 85%;
+    margin: 38px auto
+}
+
+.filter-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--glass);
+    backdrop-filter: blur(6px);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    padding: 12px 22px;
+    margin-bottom: 28px;
+    font-size: .92rem
+}
+
+.search {
+    position: relative;
+    flex: 1 1 270px;
+    max-width: 375px
+}
+
+.search input {
+    width: 100%;
+    padding: 11px 44px 11px 40px;
+    border: 2px solid #dcdcdc;
+    border-radius: var(--radius-xl);
+    background: #fafafa;
+    transition: border .25s, box-shadow .25s
+}
+
+.search input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 157, 51, .25);
+    outline: none;
+    background: #fff
+}
+
+.search i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--brown)
+}
+
+.sel {
+    position: relative
+}
+
+.sel select {
+    appearance: none;
+    padding: 10px 48px 10px 16px;
+    border: 2px solid #dcdcdc;
+    border-radius: var(--radius-sm);
+    background: #fff;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: border .25s, box-shadow .25s
+}
+
+.sel select:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 157, 51, .25);
+    outline: none
+}
+
+.sel::after {
+    content: "\f107";
+    font-family: "Font Awesome 6 Free", serif;
+    font-weight: 900;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--brown);
+    transition: transform .25s
+}
+
+.sel:hover::after {
+    transform: translateY(-50%) rotate(180deg)
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--brown), var(--orange));
+    color: #fff;
+    border: none;
+    padding: 11px 22px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12)
+}
+
+.table-card {
+    background: var(--glass);
+    backdrop-filter: blur(6px);
+    border-bottom-left-radius: var(--radius-sm);
+    border-bottom-right-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+    overflow: hidden
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    counter-reset: row
+}
+
+thead {
+    background: rgba(255, 255, 255, .55);
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    font-size: .92rem
+}
+
+th,
+td {
+    padding: 15px 18px;
+    text-align: left;
+    font-size: 1rem
+}
+
+th {
+    color: var(--brown);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .9rem
+}
+
+
+tbody tr.loaded {
+    animation: slideFade .5s ease-out forwards
+}
+
+tbody tr:hover {
+    background: rgba(255, 157, 51, .08);
+    transform: translateY(-2px);
+    opacity: 1
+}
+
+td.num {
+    width: 48px;
+    text-align: right;
+    font-weight: 700;
+    color: var(--brown)
+}
+
+td.num::before {
+    counter-increment: row;
+    content: counter(row)
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .78rem;
+    font-weight: 700;
+    margin-right: 8px
+}
+
+.action-view {
+    background: #eef4ff;
+    border: none;
+    color: var(--blue);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s
+}
+
+.action-view:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .12)
+}
+
+.action-view i {
+    transition: transform .2s
+}
+
+.action-view:hover i {
+    transform: scale(1.15)
+}
+
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 26px 0;
+    font-size: .95rem
+}
+
+.page button {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #fafafa;
+    color: var(--brown);
+    font-weight: 700;
+    transition: background .25s
+}
+
+.page button:hover {
+    background: rgba(255, 157, 51, .15)
+}
+
+.page .current {
+    background: var(--orange);
+    color: #fff;
+    pointer-events: none
+}
+
+.ellipsis {
+    cursor: default;
+    background: none;
+    font-weight: 900
+}
+
+.page select {
+    padding: 7px 10px;
+    border: 2px solid #dcdcdc;
+    border-radius: var(--radius-sm);
+    background: #fff;
+    font-size: .85rem
+}
+
+
+.btn.add {
+    list-style: none;
+    background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+    padding: 11px 48px 11px 22px;
+    position: relative;
+    transition: box-shadow .25s;
+    white-space: nowrap;
+}
+
+.btn.add {
+    --c1: var(--brown);
+    --c2: var(--orange);
+}
+
+.btn.add:hover {
+    --c1: var(--brown);
+    --c2: var(--orange);
+}
+
+.btn.add:hover {
+    background: linear-gradient(135deg, var(--c1-h) 0%, var(--c2-h) 100%);
+    transform: translateY(-2px)
+}
+
+
+.btn.add:active {
+    transform: translateY(0)
+}
+
+.btn.add:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px
+}
+
+.btn.add.demande {
+    --c1: var(--g-dem-c1);
+    --c2: var(--g-dem-c2);
+    --c1-h: var(--g-dem-c1-hov);
+    --c2-h: var(--g-dem-c2-hov);
+}
+
+.btn.add.classe {
+    --c1: var(--g-cla-c1);
+    --c2: var(--g-cla-c2);
+    --c1-h: var(--g-cla-c1-hov);
+    --c2-h: var(--g-cla-c2-hov);
+}
+
+.btn.add.inscription {
+    --c1: var(--g-insc-c1);
+    --c2: var(--g-insc-c2);
+    --c1-h: var(--g-insc-c1-hov);
+    --c2-h: var(--g-insc-c2-hov);
+}
+
+.btn.add.prof {
+    --c1: var(--g-prof-c1);
+    --c2: var(--g-prof-c2);
+    --c1-h: var(--g-prof-c1-hov);
+    --c2-h: var(--g-prof-c2-hov);
+}
+
+.btn.add.module {
+    --c1: var(--g-mod-c1);
+    --c2: var(--g-mod-c2);
+    --c1-h: var(--g-mod-c1-hov);
+    --c2-h: var(--g-mod-c2-hov);
+}
+
+.btn.add.mod-prof {
+    --c1: var(--g-modprof-c1);
+    --c2: var(--g-modprof-c2);
+    --c1-h: var(--g-modprof-c1-hov);
+    --c2-h: var(--g-modprof-c2-hov);
+}
+
+.btn.add.prof-classe {
+    --c1: var(--g-profcla-c1);
+    --c2: var(--g-profcla-c2);
+    --c1-h: var(--g-profcla-c1-hov);
+    --c2-h: var(--g-profcla-c2-hov);
+}
+
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}

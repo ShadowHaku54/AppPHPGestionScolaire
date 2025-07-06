@@ -1,0 +1,112 @@
+
+:root {
+    --brown: #4a2e16;
+    --orange: #ff9d33;
+    --glass: rgba(255, 255, 255, .88);
+    --radius: 24px;
+    --shadow: 0 6px 24px rgba(0, 0, 0, .08)
+}
+
+form {
+    width: 100%;
+    max-width: 560px;
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 38px 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 38px auto;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--brown);
+    text-align: center
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: .9rem;
+    color: var(--brown)
+}
+
+.icon {
+    position: relative
+}
+
+.icon i {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--brown);
+    pointer-events: none
+}
+
+.field input,
+.field select {
+    width: 100%;
+    padding: 14px 18px 14px 58px;
+    border: 2px solid #dcdcdc;
+    border-radius: var(--radius);
+    background: #fafafa;
+    font-size: .95rem;
+    transition: border .25s, box-shadow .25s
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 157, 51, .25);
+    outline: none;
+    background: #fff
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 16px;
+    border: none;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--brown), var(--orange));
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: transform .2s
+}
+
+.btn:hover {
+    transform: translateY(-3px)
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 130%;
+    height: 100%;
+    background: rgba(255, 255, 255, .25);
+    transform: skewX(-20deg)
+}
+
+.btn:hover:before {
+    animation: shine .65s forwards
+}
+
+@keyframes shine {
+    to {
+        left: 130%
+    }
+}

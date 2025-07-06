@@ -1,0 +1,151 @@
+:root {
+    --brown: #4a2e16;
+    --orange: #ff9d33;
+    --blue: #2d73d2;
+    --red: #c03c30;
+    --gray: #666;
+    --radius: 22px;
+    --shadow: 0 12px 26px rgba(0, 0, 0, .16)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif
+}
+
+html, body {
+    height: 100%
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: #f5f6f8
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--brown)
+}
+
+.page-form {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 36px 42px;
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px
+}
+
+.page-form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.page-form .btn {
+    padding: 15px 22px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: .95rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--blue), #5aa3ff);
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s
+}
+
+.page-form .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 100%;
+    background: rgba(255, 255, 255, .23);
+    transform: skewX(-20deg)
+}
+
+.page-form .btn:hover::before {
+    animation: shine .6s forwards
+}
+
+.page-form .btn:hover {
+    transform: translateY(-3px)
+}
+
+@keyframes shine {
+    to {
+        left: 120%
+    }
+}
+
+.page-form .select-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(245, 245, 245, .7);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .06)
+}
+
+.page-form .class-tag {
+    border-radius: 14px;
+    padding: 6px 14px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--orange)
+}
+
+.page-form .info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+.page-form .remove {
+    margin-left: auto;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: linear-gradient(135deg, var(--red), #ff7c7c);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: transform .25s
+}
+
+.page-form .remove:hover {
+    transform: rotate(90deg)
+}
+
+.placeholder-card {
+    border: 2px dashed var(--red);
+    background: #fafafa;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    border-radius: var(--radius);
+    font-size: .85rem
+}

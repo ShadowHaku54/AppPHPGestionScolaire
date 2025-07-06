@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+:root {
+    --brown: #4a2e16;
+    --orange: #ff9d33;
+    --blue: #2d73d2;
+    --pink: #d54d8d;
+    --violet: #7057d7;
+    --gray: #5d5d5d;
+    --light: #ffffff;
+    --red: #d7392e;
+    --green: #2e8a3d;
+    --yellow: #d0a000;
+    --glass: rgba(255, 255, 255, .8);
+    --radius-xl: 26px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+    --shadow: 0 6px 20px rgba(0, 0, 0, .08);
+
+    /* Étudiant : nouvelle demande – vert émeraude soutenu */
+    --g-dem-c1: #10b981;   /* mid */
+    --g-dem-c2: #047857;   /* dark */
+    --g-dem-c1-hov: #22c55e;
+    --g-dem-c2-hov: #065f46;
+
+    /* Resp. pédagogique : créer classe – bleu royal */
+    --g-cla-c1: #3b82f6;
+    --g-cla-c2: #1e40af;
+    --g-cla-c1-hov: #60a5fa;
+    --g-cla-c2-hov: #1d4ed8;
+
+    /* Attaché : inscrire étudiant – orange brûlé */
+    --g-insc-c1: #ea580c;
+    --g-insc-c2: #c2410c;
+    --g-insc-c1-hov: #f97316;
+    --g-insc-c2-hov: #b45309;
+
+    /* Ajouter prof – violet profond */
+    --g-prof-c1: #8b5cf6;
+    --g-prof-c2: #6d28d9;
+    --g-prof-c1-hov: #a78bfa;
+    --g-prof-c2-hov: #7c3aed;
+
+    /* Ajouter module – turquoise dense */
+    --g-mod-c1: #0d9488;
+    --g-mod-c2: #065f46;
+    --g-mod-c1-hov: #14b8a6;
+    --g-mod-c2-hov: #0f766e;
+
+    /* Associer module ↔ prof – rose framboise foncé */
+    --g-modprof-c1: #db2777;
+    --g-modprof-c2: #9d174d;
+    --g-modprof-c1-hov: #ec4899;
+    --g-modprof-c2-hov: #be185d;
+
+    /* Associer prof ↔ classe – cyan glacier soutenu */
+    --g-profcla-c1: #0891b2;
+    --g-profcla-c2: #0e7490;
+    --g-profcla-c1-hov: #22d3ee;
+    --g-profcla-c2-hov: #0e9ac9;
+
+    /* Nouvelle année scolaire – doré ambré */
+    --g-annee-c1: #eab308;
+    --g-annee-c2: #b45309;
+    --g-annee-c1-hov: #fbbf24;
+    --g-annee-c2-hov: #ca8a04;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 13px;
+    border-radius: 14px;
+    font-size: .78rem;
+    font-weight: 700
+}
+
+.green {
+    background: #d6fadf;
+    color: #1e7a37
+}
+
+.red {
+    background: #f9d6d5;
+    color: #c03c30
+}
+
+.orange {
+    background: #ffe8d1;
+    color: #b86403
+}
+
+.blue {
+    background: #d9e6ff;
+    color: var(--blue)
+}
+
+.pink {
+    background: #ffd8ec;
+    color: var(--pink)
+}
+
+.violet {
+    background: #e7e3ff;
+    color: var(--violet)
+}
+
+.gray {
+    background: #e4e4e4;
+    color: var(--gray)
+}
+
+.yellow {
+    background: #fff6d9;
+    color: var(--yellow)
+}
+
+
+.btn.add {
+    list-style: none;
+    background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+    padding: 11px 48px 11px 22px;
+    position: relative;
+    transition: box-shadow .25s
+}
+
+.btn.add {
+    --c1: var(--brown);
+    --c2: var(--orange);
+}
+
+.btn.add:hover {
+    --c1: var(--brown);
+    --c2: var(--orange);
+}
+
+.btn.add:hover {
+    background: linear-gradient(135deg, var(--c1-h) 0%, var(--c2-h) 100%);
+    transform: translateY(-2px)
+}
+
+
+.btn.add:active {
+    transform: translateY(0)
+}
+
+.btn.add:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px
+}
+
+.btn.add.demande {
+    --c1: var(--g-dem-c1);
+    --c2: var(--g-dem-c2);
+    --c1-h: var(--g-dem-c1-hov);
+    --c2-h: var(--g-dem-c2-hov);
+}
+
+.btn.add.classe {
+    --c1: var(--g-cla-c1);
+    --c2: var(--g-cla-c2);
+    --c1-h: var(--g-cla-c1-hov);
+    --c2-h: var(--g-cla-c2-hov);
+}
+
+.btn.add.inscription {
+    --c1: var(--g-insc-c1);
+    --c2: var(--g-insc-c2);
+    --c1-h: var(--g-insc-c1-hov);
+    --c2-h: var(--g-insc-c2-hov);
+}
+
+.btn.add.prof {
+    --c1: var(--g-prof-c1);
+    --c2: var(--g-prof-c2);
+    --c1-h: var(--g-prof-c1-hov);
+    --c2-h: var(--g-prof-c2-hov);
+}
+
+.btn.add.module {
+    --c1: var(--g-mod-c1);
+    --c2: var(--g-mod-c2);
+    --c1-h: var(--g-mod-c1-hov);
+    --c2-h: var(--g-mod-c2-hov);
+}
+
+.btn.add.mod-prof {
+    --c1: var(--g-modprof-c1);
+    --c2: var(--g-modprof-c2);
+    --c1-h: var(--g-modprof-c1-hov);
+    --c2-h: var(--g-modprof-c2-hov);
+}
+
+.btn.add.prof-classe {
+    --c1: var(--g-profcla-c1);
+    --c2: var(--g-profcla-c2);
+    --c1-h: var(--g-profcla-c1-hov);
+    --c2-h: var(--g-profcla-c2-hov);
+}
+
+.btn.add.annee {
+    --c1: var(--g-annee-c1);
+    --c2: var(--g-annee-c2);
+    --c1-h: var(--g-annee-c1-hov);
+    --c2-h: var(--g-annee-c2-hov);
+}

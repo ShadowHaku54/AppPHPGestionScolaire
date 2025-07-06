@@ -1,0 +1,171 @@
+:root {
+    --brown: #4a2e16;
+    --orange: #ff9d33;
+    --blue: #2d73d2;
+    --glass: #ffffffee;
+    --radius: 24px;
+    --shadow: 0 6px 24px rgba(0, 0, 0, .08)
+}
+
+.container {
+    width: 100%;
+    max-width: 560px;
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 38px 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 38px auto;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--brown)
+}
+
+.year {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--glass);
+    backdrop-filter: blur(6px);
+    padding: 14px 28px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--brown)
+}
+
+.year i {
+    color: var(--orange)
+}
+
+.field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: .9rem;
+    color: var(--brown)
+}
+
+.field label {
+    margin-left: 4px
+}
+
+.field select {
+    appearance: none;
+    padding: 10px 48px 10px 16px;
+    border: 2px solid #2e2727;
+    border-radius: var(--radius-sm);
+    background: #fff;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: border .25s, box-shadow .25s
+}
+
+.field select:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 157, 51, .25);
+    outline: none
+}
+
+.field:has(select)::after {
+    content: "\f107";
+    font-family: "Font Awesome 6 Free", serif;
+    font-weight: 900;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--brown);
+    transition: transform .25s;
+}
+
+
+.field:hover::after {
+    transform: translateY(-50%) rotate(180deg)
+}
+
+.field input,
+.field select {
+    width: 100%;
+    padding: 14px 18px 14px 56px;
+    border: 2px solid #dcdcdc;
+    border-radius: var(--radius);
+    background: #fafafa;
+    font-size: .95rem;
+    transition: .25s
+}
+
+.field input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 157, 51, .25);
+    background: #fff;
+    outline: none
+}
+
+.field i {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--brown);
+    font-size: 1rem;
+    pointer-events: none;
+    z-index: 2
+}
+
+.double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px
+}
+
+.btn {
+    padding: 16px;
+    border: none;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--brown), var(--orange));
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s
+}
+
+.btn:hover {
+    transform: translateY(-3px)
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 130%;
+    height: 100%;
+    background: rgba(255, 255, 255, .25);
+    transform: skewX(-20deg)
+}
+
+.btn:hover:before {
+    animation: shine .65s forwards
+}
+
+@keyframes shine {
+    to {
+        left: 130%
+    }
+}
